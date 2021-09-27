@@ -1,0 +1,13 @@
+<form action="{% url 'inventory:create_item' %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h2>New Item</h2></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <input type="text" name ="name" id="name"> <label> Name </label><br><br>
+        <input type="number" name="quantity" id="quantity" value="0" min = "0"><label> Quantity </label>
+        <br>
+</fieldset>
+<br>
+<input type="submit" value="Save">
+<p><a href= "{% url 'inventory:index' %}">Return to inventory without saving</p>
+</form>

@@ -1,0 +1,13 @@
+
+<form action="{% url 'inventory:manage' item.id %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>{{ item.Item_name }}</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <input type="number" name="quantity" id="quantity" value="{{ item.Item_quantity }}" min = "0">
+        <br>
+</fieldset>
+<input type="submit" name= "Save" value="Save">
+<input type="submit" name= "Delete" value="Delete">
+<p><a href= "{% url 'inventory:index' %}">Return to inventory without saving</p>
+</form>

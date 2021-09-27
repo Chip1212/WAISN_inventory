@@ -1,0 +1,28 @@
+{% load static %}
+
+
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'inventory:logout' %}">Log Out</a></p>
+  <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<h2>Inventory</h2>
+
+{% if item_list %}
+    <ul>
+    {% for item in item_list %}
+        <li><a href="{% url 'inventory:detail' item.id %}">{{ item.Item_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>The inventory is empty</p>
+{% endif %}
+
+<p><a href= "{% url 'inventory:new_item' %}">Add an item</p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'inventory:login' %}">Log In</a>
+{% endif %}
+{% endblock %}
