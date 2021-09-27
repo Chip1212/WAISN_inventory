@@ -11,7 +11,7 @@ This proved to be a challenging and fun assignment.
 
 **Acessing the application**
 
-To get the application up and running, download and unzip this file. Ensure that django is installed on your machine. 
+To get the application up and running, download this folder and ensure that django is installed on your machine. 
 
 Use terminal to navigate to the "mysite" directory within the downloaded folder.
 
